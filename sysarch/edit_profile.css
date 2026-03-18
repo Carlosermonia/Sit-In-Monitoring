@@ -1,0 +1,196 @@
+/* Inherits ROOT variables from dashboard.css */
+
+/* Special container override for edit page */
+.edit-page-container {
+    grid-template-columns: 320px 1fr; /* Two column layout */
+}
+
+.main-form-panel {
+    grid-column: 2;
+}
+
+.sticky-panel {
+    position: sticky;
+    top: 100px;
+    height: max-content;
+}
+
+/* Form Panel Specifics */
+.main-form-panel .form-content {
+    height: auto;
+    padding: 2rem;
+    max-height: calc(100vh - 180px); /* Sets dynamic max height */
+}
+
+/* Presentable Form Styling */
+.presentable-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.split-3 {
+    grid-template-columns: 2fr 1fr;
+}
+
+.field label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+}
+
+.presentable-form input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid #DDD8EE;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    background: #FDFBFF;
+    transition: all 0.2s ease;
+}
+
+.presentable-form input:focus {
+    border-color: var(--blue);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(74, 30, 138, 0.1);
+    outline: none;
+}
+
+/* Read-Only/Locked Input */
+.field-locked input {
+    background: #f0f0f0;
+    color: #888;
+    border-color: #ddd;
+    cursor: not-allowed;
+    padding-left: 2.5rem; /* Space for lock icon */
+}
+.input-wrap select {
+    padding-left: 2.8rem !important;
+}
+.field-locked .input-wrap {
+    position: relative;
+}
+
+.field-locked .field-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    color: #aaa;
+}
+.field select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid #DDD8EE;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    color: #1A0A3B; /* Matches your text color */
+    background: #FDFBFF;
+    cursor: pointer;
+    
+    /* This part removes the default browser arrow */
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    
+    /* Adds a custom clean arrow icon */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234A1E8A'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.1rem;
+    transition: all 0.2s ease;
+}
+
+.field select:focus {
+    border-color: #4A1E8A; /* Your theme purple */
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(74, 30, 138, 0.1);
+    outline: none;
+}
+select optgroup {
+    font-weight: 700;
+    color: var(--purple); /* Using your theme purple */
+    background: #f8f9ff;
+    font-style: normal;
+    padding: 10px;
+}
+
+select option {
+    padding: 8px;
+    color: var(--text);
+    background: #fff;
+}
+/* Presentable Save Button */
+.btn-primary {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: purple;
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+    transition: transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(74, 30, 138, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(74, 30, 138, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* ALERTS */
+.alert {
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+}
+
+.alert-error {
+    background-color: #FFF0F0;
+    border: 1px solid #FFCACA;
+    color: #E03C3C;
+}
+
+.alert-success {
+    background-color: #F0FFF8;
+    border: 1px solid #A8EDD0;
+    color: #1C7C54;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+    .edit-page-container {
+        grid-template-columns: 1fr;
+    }
+    .main-form-panel .form-content {
+        max-height: none;
+    }
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
